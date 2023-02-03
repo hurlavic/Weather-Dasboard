@@ -1,3 +1,4 @@
+// Fucntion to fire when search button is clicked
 $("#search-button").on("click", function(e){
     e.preventDefault();
 
@@ -15,8 +16,12 @@ $.ajax({
 
     var button = historyButton.html(cityName);
 
-
     $("#history").append(button);
+
+    $(".historyTab").css({"border-radius" : "5px", 
+    "border" : "1px solid grey", 
+    "padding": "5px",
+    "margin-bottom":"8px"})
     
 });
 })
