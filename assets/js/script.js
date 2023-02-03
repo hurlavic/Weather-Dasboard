@@ -10,10 +10,13 @@ $.ajax({
     method: "GET"
 }).then(function(response){
     var historyButton = $("<button>");
-    historyButton.attr("data-name", cityName);
-    historyButton.addClass("historyTab")
+    historyButton.attr("data-name");
+    historyButton.addClass("historyTab");
 
-    $("#history").append(historyButton);
-    historyButton.style.width = "13px"
+    var button = historyButton.html(cityName);
+
+
+    $("#history").append(button);
+    
 });
 })
