@@ -75,6 +75,16 @@ $("#search-button").on("click", function(e){
 
     // 
 })
+// get weather data from clicking search history buttons
+function buttonClick(event){
+    const buttonClk=event.target;
+    if (event.target.matches("button")){
+        city=buttonClk.textContent.trim();
+        currentWeather(city);
+    }
+
+}
+$(document).on("click",buttonClick);
 
 
 
