@@ -1,20 +1,22 @@
+let cityName = $(".form-input").val();
+
+
 // Function to trigger when search button is clicked
 $("#search-button").on("click", function(e){
     e.preventDefault();
-// Defines variable for search query
-    var cityName = $(".form-input").val();
-    var apiKey = "6b92529c3fbdbf9af10b80a0441ee81b";
-    var queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=5&appid=" + apiKey;
-
+// Defines variable for search query   
+    let apiKey = "6b92529c3fbdbf9af10b80a0441ee81b";
+    let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
 $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function(response){
-    var historyButton = $("<button>");
+  console.log(response)
+    let historyButton = $("<button>");
     historyButton.attr("data-name");
     historyButton.addClass("historyTab");
 
-    var button = historyButton.html(cityName);
+    let button = historyButton.html(cityName);
 
     $("#history").append(button);
 // Applies styling to history buttons
@@ -23,7 +25,21 @@ $.ajax({
     "padding": "5px",
     "margin-bottom":"8px"});
 
-    $("#today").text(JSON.stringify(response));
-});
+    // 
+}).then(data =>{
+displayCityData(data);
 
 })
+function displayCityData(){
+    
+    let cityDataDiv = $("<div>");
+    cityDataDiv.html(`
+    <p>Temp: ${response.list[0].main.temp}</p>
+    <p>Wind: ${Wind}</p>
+    <p>Plot: ${Humidity}</p>
+    `)
+    $("#today").append(cityDataDiv);
+    }
+})
+
+
