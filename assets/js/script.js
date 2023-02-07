@@ -68,7 +68,7 @@ function weatherData(city) {
         const windsmph = (ws * 2.237).toFixed(1);
         $(todayWind).html(windsmph + "MPH");
 
-    })
+    });
 }
 searchButton.on("click", displayCityData);
 
@@ -81,6 +81,8 @@ searchButton.on("click", function(e){
     let button = historyButton.html(cityName.val());
 
     $("#history").append(button);
+
+
 // Applies styling to history buttons
     $(".historyTab").css({"border-radius" : "5px", 
     "border" : "1px solid grey", 
@@ -100,7 +102,7 @@ function buttonClick(e){
         weatherData(city);
     }
 }
-$(document).on("click",buttonClick);
+$(document).on("click", buttonClick);
 
 
 
