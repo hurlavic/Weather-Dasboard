@@ -1,10 +1,14 @@
-/* .btn {
-    display: block;
-    width: 100%;
-    border: none;
-    background-color: #04AA6D;
-    padding: 14px 28px;
-    font-size: 16px;
-    cursor: pointer;
-    text-align: center;
-  } */
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+  .card {
+    margin: 0 auto;
+  }
+
+  #forecast {
+    display: none;
+  }
+  .forecast-card{
+    color: white;
+  }

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="styles/reset.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Roboto+Slab:wght@100&family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/style.css"/>
   <title>Weather Dashboard</title>
   <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
@@ -58,50 +59,57 @@
         </section>
 <!-- 5-day forecast -->
 <section id="forecast" class="row mt-3" role="region" aria-live="polite">
+    <h3>5-day Forecast: </h3>
+
     <div class="card-deck">
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title" id="day0"></h4>
+            <div class="card-body forecast-card ">
+                <h5 class="card-title" id="day0"></h5>
                 <p class="card-text" id="date0"></p>
-                <span id="temp0"></span>
-                <span id="humidity0"></span>
-                <span id="icon0"></span>
+                <p id="temp0"></p>
+                <p id="wind0"></p>
+                <p id="humidity0"></p>
+                <p id="icon0"></p>
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title" id="day1"></h4>
+            <div class="card-body forecast-card">
+                <h5 class="card-title" id="day1"></h5>
                 <p class="card-text" id="date1"></p>
-                <span id="temp1"></span>
-                <span id="humidity1"></span>
-                <span id="icon1"></span>
+                <p id="temp1"></p>
+                <p id="wind1"></p>
+                <p id="humidity1"></p>
+                <p id="icon1"></p>
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title" id="day2"></h4>
+            <div class="card-body forecast-card">
+                <h5 class="card-title" id="day2"></h5>
                 <p class="card-text" id="date2"></p>
-                <span id="temp2"></span>
-                <span id="humidity2"></span>
-                <span id="icon2"></span>
+                <p id="temp2"></p>
+                <p id="wind2"></p>
+                <p id="humidity2"></p>
+                <p id="icon2"></p>
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title" id="day3"></h4>
+            <div class="card-body forecast-card">
+                <h5 class="card-title" id="day3"></h5>
                 <p class="card-text" id="date3"></p>
-                <span id="temp3"></span>
-                <span id="humidity3"></span>
-                <span id="icon3"></span>
+                <p id="temp3"></p>
+                <p id="wind3"></p>
+                <p id="humidity3"></p>
+                <p id="icon3"></p>
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
-                <h4 class="card-title" id="day4"></h4>
+            <div class="card-body forecast-card">
+                <h5 class="card-title" id="day4"></h5>
                 <p class="card-text" id="date4"></p>
-                <span id="temp4"></span>
-                <span id="humidity4"></span>
-                <span id="icon4"></span>
+                <p id="temp4"></p>
+                <p id="wind4"></p>
+                <p id="humidity4"></p>
+                <p id="icon4"></p>
             </div>
         </div>
     </div>
