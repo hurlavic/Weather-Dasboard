@@ -1,3 +1,4 @@
+// Defines variable globally
 let cityName = $(".form-input");
 let searchButton = $("#search-button");
 let todayTemperature = $("#temperature");
@@ -5,18 +6,7 @@ let todayWind = $("#wind");
 let todayHumidity = $("#Humidity");
 let currentCity = $("#current-data");
 let city = "";
-// let sCity = [];
-
 let apiKey = "5fbdce717539e1f16120b7e52b90e251";
-
-// function find(c){
-//     for (var i=0; i<sCity.length; i++){
-//         if(c.toUpperCase()===sCity[i]){
-//             return -1;
-//         }
-//     }
-//     return 1;
-// }
 
 // Function to display weather data after searching the city value grabbed from text input 
 function displayCityData(e){
@@ -25,10 +15,9 @@ function displayCityData(e){
         city=cityName.val().trim();
         weatherData(city);
     }
+}
 
-    }
-
-// Function to fetch weather data
+// Function to fetch weather data (Both current and Forecast)
 function weatherData(city) {
     let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
     $.ajax({
@@ -54,6 +43,7 @@ function weatherData(city) {
                 let icon = forecast[i+1].weather[0].icon;
                 let iconurl = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
 
+// Appends fetched weather forecast data to HTML templates to be dispalyed to user
                 $(`#day${i}`).html(day);
                 $(`#date${i}`).html(date);
                 $(`#temp${i}`).html("Temp:" + " " + temp + "&#8451");
@@ -61,9 +51,9 @@ function weatherData(city) {
                 $(`#humidity${i}`).html("Humidity:" + " " + humidity + "%");
                 $(`#icon${i}`).html("<img src=" + iconurl + ">");
             }
+})
 
-        })
-
+// Displays Current weather data to user
         const weathericon = response.weather[0].icon;
         const iconurl = "https://openweathermap.org/img/wn/" + weathericon + "@2x.png";
         const date = new Date().toLocaleDateString();
@@ -79,14 +69,11 @@ function weatherData(city) {
         $(todayWind).html(windsmph + "MPH");
 
     })
-
 }
 searchButton.on("click", displayCityData);
 
-// Displays current waether data when search button is clicked
-searchButton.on("click", function(e){
-    // e.preventDefault();
-// Defines history button for search query   
+// Defines history button for search query
+searchButton.on("click", function(e){   
     let historyButton = $("<button>");
     historyButton.attr("data-name");
     historyButton.addClass("historyTab");
@@ -100,11 +87,12 @@ searchButton.on("click", function(e){
     "padding": "5px",
     "margin-bottom":"8px",
     });
-// Displays hidden forecast card templates from HTML
+// Displays hidden forecast card templates from HTML and styles the background
 $("#forecast").css({"display" : "inline"});
-$(".forecast-card").css({"background-color" : "#007BFF"})
+$(".forecast-card").css({"background-color" : "#2D3E50"})
 })
-// get weather data from clicking search history buttons
+
+// get weather data by clicking search history buttons and renders both current and future weather data for user
 function buttonClick(e){
     const buttonClk=e.target;
     if (e.target.matches("button")){

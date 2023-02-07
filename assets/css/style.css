@@ -2,13 +2,13 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 
-  .card {
+.card {
     margin: 0 auto;
   }
 
-  #forecast {
+#forecast {
     display: none;
   }
-  .forecast-card{
+.forecast-card{
     color: white;
   }
